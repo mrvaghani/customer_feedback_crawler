@@ -11,15 +11,8 @@ class QuotesSpider(scrapy.Spider):
     start_urls = [
         'https://www.consumeraffairs.com/travel/jetblue.html',
     ]
-    # custom_settings = {
-    #     'CONCURRENT_ITEMS': '50',
-    #     'CONCURRENT_REQUESTS': '8',
-    #     'BOT_NAME': 'scrapybot'
-    # }
 
     def parse(self, response):
-        # reviews_container_list = response.css('div#reviews-container').extract()
-        # reviews_list = response.xpath('//div[@id="reviews-container"]').xpath('//div[@class="js-paginator-data"]').xpath('//div[@class="rvw js-rvw"]').getall()
         detailed_review_object_list = []
         review_selector_list = response.xpath('//div[@id="reviews-container"]//div[@class="js-paginator-data"]').xpath('//div[@class="rvw js-rvw"]')
         for _review_selector in review_selector_list:
