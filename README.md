@@ -1,13 +1,3 @@
-
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
 # Customer Feedback Python Crawler
 Crawl Any/All public domain/social media data to get customer’s sentiments of JetBlue.
 
