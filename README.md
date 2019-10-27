@@ -9,7 +9,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 
 # Customer Feedback Python Crawler
-Crawl Any/All public domain/social media data to get customer’s sentiments of JetBlue.
+Crawl public domain and social media data to get customers's' sentiments of JetBlue using Google API for natural language processing. Display this information using Javascript visualization tools.
 
 
 ## Getting Started
@@ -103,7 +103,7 @@ This will create a file `reviews.json` in the same direction as the script
 
 ## Running the tests
 
-TBD
+We scraped all the recent reviews off the Consumer Affairs website to start. Using that data, we were able to gain 4 features for every review: star rating, state location, time, and description. We processed the description using entity sentiment analysis and then correlated that analysis to every state. In our intial tests we do not discriminate among the entities found with in the review, and instead analyze all entities and then normalized the aggregate scores. At first this may seem like a naive approach, we recognize that the feeling a customer may have can color the whole review, inclusive of all objects. Therefore while analyzing all entities allows us to capture this.
 
 ## Deployment
 
@@ -112,6 +112,7 @@ TBD
 ## Built With
 
 * [Scrapy](https://scrapy.org/doc/) - The web framework used
+* [Google Cloud Language Processing API] - Machine learning function-as-a-service
 
 ## Versioning
 
