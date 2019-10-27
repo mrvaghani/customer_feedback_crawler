@@ -6,10 +6,10 @@ import time
 import pytz
 
 
-class QuotesSpider(scrapy.Spider):
+class ReviewSpider(scrapy.Spider):
     name = 'reviews'
     start_urls = [
-        'https://www.consumeraffairs.com/travel/jetblue.html',
+        'https://www.consumeraffairs.com/travel/jetblue.html?page=3#sort=recent&filter=none',
     ]
 
     def parse(self, response):
@@ -75,12 +75,9 @@ class QuotesSpider(scrapy.Spider):
                 'num_found_useful': _num_found_useful
             }
             detailed_review_object_list.append(detailed_review_object)
+
         _return_data = {
             'reviews': detailed_review_object_list
         }
         return _return_data
-
-        # next_page = response.css('li.next a::attr("href")').get()
-        # if next_page is not None:
-        #     yield response.follow(next_page, self.parse)
 
